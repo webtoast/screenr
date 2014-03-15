@@ -15,14 +15,34 @@ module.exports = function(grunt) {
           open: true
         }
       }
+    },
+
+    watch: {
+      less: {
+        files: ["css/src/main.less"],
+        tasks: ["less"]
+      }
+    },
+
+    less: {
+      options: {
+
+      },
+      development: {
+        files: {
+          "./css/main.css": "./css/src/main.less"
+        }
+      }
     }
 
   });
 
   // Load plugins
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('default', []);
+  grunt.registerTask('default', ["watch"]);
 
 };
