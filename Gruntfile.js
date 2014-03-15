@@ -4,19 +4,6 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    connect: {
-      server: {
-        options: {
-          port: 9002,
-          protocol: 'http',
-          hostname: '0.0.0.0',
-
-          keepalive: true,
-          open: true
-        }
-      }
-    },
-
     watch: {
       less: {
         files: ["css/src/main.less"],
@@ -33,16 +20,36 @@ module.exports = function(grunt) {
           "./css/main.css": "./css/src/main.less"
         }
       }
+    },
+
+    browserSync: {
+      development: {
+        options: {
+          server: { 
+            baseDir: "./"
+          },
+          ports: {
+            min: 3000,
+            max: 3002
+          },
+          watchTask: true
+        },
+        files: {
+          src: "css/main.css"
+        }
+      }
     }
 
   });
 
   // Load plugins
-  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-browser-sync');
 
   // Default task(s).
   grunt.registerTask('default', ["watch"]);
+
+  grunt.registerTask('dev', ["browserSync", "watch"])
 
 };
