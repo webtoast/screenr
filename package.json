@@ -5,6 +5,7 @@
     "grunt": "~0.4.1",
     "grunt-contrib-less": "0.10.0",
     "grunt-contrib-watch": "0.6.0",
-    "grunt-browser-sync": "0.7.0"
+    "grunt-browser-sync": "0.7.0",
+    "grunt-bowercopy": "^1.0.0"
   }
 }

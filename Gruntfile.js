@@ -38,6 +38,21 @@ module.exports = function(grunt) {
           src: "css/main.css"
         }
       }
+    },
+
+    bowercopy: {
+      options: {
+        // Task-specific options go here
+      },
+      js: {
+        options: {
+          destPrefix: 'js/vendor'
+        },
+        files: {
+          'verge.js': 'verge/src/verge.js'
+        }
+        // Target-specific file lists and/or options go here
+      }
     }
 
   });
@@ -46,6 +61,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-browser-sync');
+  grunt.loadNpmTasks('grunt-bowercopy');
 
   // Default task(s).
   grunt.registerTask('default', ["watch"]);
