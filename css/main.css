@@ -8,7 +8,6 @@ body {
 }
 body {
   display: table;
-  background-color: darkviolet;
 }
 .output-container {
   display: table-cell;
@@ -17,7 +16,6 @@ body {
 }
 h1 {
   text-align: center;
-  color: white;
   margin: 0;
   -webkit-transform: translateY(-50%);
 }
