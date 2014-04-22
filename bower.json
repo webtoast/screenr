@@ -18,6 +18,7 @@
     "tests"
   ],
   "dependencies": {
-    "verge": "~1.9.1"
+    "verge": "~1.9.1",
+    "jquery-throttle-debounce": "*"
   }
 }

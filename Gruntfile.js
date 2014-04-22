@@ -49,7 +49,8 @@ module.exports = function(grunt) {
           destPrefix: 'js/vendor'
         },
         files: {
-          'verge.js': 'verge/src/verge.js'
+          'verge.js': 'verge/src/verge.js',
+          'jquery.ba-throttle-debounce.js': 'jquery-throttle-debounce/jquery.ba-throttle-debounce.js'
         }
         // Target-specific file lists and/or options go here
       }
